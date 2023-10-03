@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статистика по продуктам</title>
+</head>
+<body>
+    <h1>Статистика по продуктам</h1>
+    <ul>
+        {% for product_stat in product_stats %}
+            <li>
+                Продукт: {{ product_stat.product_name }}<br>
+                Количество просмотренных уроков: {{ product_stat.total_watched_lessons }}<br>
+                Общее время просмотра (минуты): {{ product_stat.total_watch_time_minutes }}<br>
+                Количество учеников: {{ product_stat.total_students }}<br>
+                Процент приобретения продукта: {{ product_stat.purchase_percentage }}%<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

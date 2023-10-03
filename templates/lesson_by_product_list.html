@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список уроков по продукту</title>
+</head>
+<body>
+    <h1>Список уроков по продукту</h1>
+    <ul>
+        {% for lesson in lessons %}
+            <li>
+                Name: {{ lesson.name }}<br>
+                Duration: {{ lesson.duration }} минут<br>
+                Watched: {% if lesson.watched %}Да{% else %}Нет{% endif %}<br>
+                Watch Time: {{ lesson.watch_time }} минут<br>
+                Last Viewed Date: {% if lesson.last_viewed_date %}{{ lesson.last_viewed_date|date:"F d, Y H:i:s" }}{% else %}Нет данных{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
